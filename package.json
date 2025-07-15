@@ -13,7 +13,7 @@
     "dev:frontend": "cd frontend && npm start",
     "dev:backend": "cd backend && npm run dev",
     "test": "cd frontend && npm test",
-    "postinstall": "echo 'Skipping postinstall for Vercel deployment'"
+    "postinstall": "echo 'Root install completed'"
   },
   "keywords": [
     "erp",
