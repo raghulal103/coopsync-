@@ -1,33 +1,35 @@
 {
   "name": "cooperative-erp-platform",
   "version": "1.0.0",
-  "description": "Multi-Tenant ERP Platform for Cooperative Societies",
+  "description": "Multi-Tenant ERP Platform for Cooperative Societies in India",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"npm run backend:dev\" \"npm run frontend:dev\"",
-    "backend:dev": "cd backend && npm run dev",
-    "frontend:dev": "cd frontend && npm start",
-    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "start": "cd frontend && npm start",
     "build": "cd frontend && npm run build",
-    "start": "cd backend && npm start",
-    "test": "cd backend && npm test && cd ../frontend && npm test",
-    "docker:build": "docker-compose build",
-    "docker:up": "docker-compose up",
-    "docker:down": "docker-compose down"
+    "install:frontend": "cd frontend && npm install --legacy-peer-deps",
+    "install:backend": "cd backend && npm install",
+    "install:all": "npm run install:frontend && npm run install:backend",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "cd frontend && npm start",
+    "dev:backend": "cd backend && npm run dev",
+    "test": "cd frontend && npm test",
+    "postinstall": "npm run install:frontend"
   },
   "keywords": [
     "erp",
     "cooperative",
-    "societies",
     "multi-tenant",
-    "india",
-    "gst",
-    "payroll",
-    "accounting"
+    "nodejs",
+    "react",
+    "postgresql"
   ],
-  "author": "ERP Development Team",
+  "author": "Cooperative ERP Team",
   "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.0"
   }
 }
