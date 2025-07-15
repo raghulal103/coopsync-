@@ -5,15 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "cd frontend && npm start",
-    "build": "cd frontend && npm run build",
-    "install:frontend": "cd frontend && npm install --legacy-peer-deps",
+    "build": "cd frontend && npm install --legacy-peer-deps --force && npm run build",
+    "install:frontend": "cd frontend && npm install --legacy-peer-deps --force",
     "install:backend": "cd backend && npm install",
     "install:all": "npm run install:frontend && npm run install:backend",
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
     "dev:frontend": "cd frontend && npm start",
     "dev:backend": "cd backend && npm run dev",
     "test": "cd frontend && npm test",
-    "postinstall": "npm run install:frontend"
+    "postinstall": "echo 'Skipping postinstall for Vercel deployment'"
   },
   "keywords": [
     "erp",
@@ -30,6 +30,24 @@
     "npm": ">=8.0.0"
   },
   "devDependencies": {
-    "concurrently": "^8.2.0"
+    "concurrently": "^8.2.0",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
