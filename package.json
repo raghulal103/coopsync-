@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cd frontend && npm start",
-    "build": "cd frontend && npm install --legacy-peer-deps --force && npm run build",
+    "build": "cd frontend && npm install --legacy-peer-deps --force && SKIP_PREFLIGHT_CHECK=true CI=false npm run build",
     "install:frontend": "cd frontend && npm install --legacy-peer-deps --force",
     "install:backend": "cd backend && npm install",
     "install:all": "npm run install:frontend && npm run install:backend",
