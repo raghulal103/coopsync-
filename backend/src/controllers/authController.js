@@ -1,4 +1,6 @@
 const { validationResult } = require('express-validator');
+const jwt = require('jsonwebtoken');
+const { Op } = require('sequelize');
 const speakeasy = require('speakeasy');
 const QRCode = require('qrcode');
 const { User, Tenant, Role, UserRole } = require('../models');
