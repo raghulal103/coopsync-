@@ -15,6 +15,14 @@
     "test": "cd frontend && npm test",
     "postinstall": "echo 'Root install completed'"
   },
+  {
+  "dependencies": {
+    "react-scripts": "5.0.1"
+  },
+  "devDependencies": {
+    "typescript":  "^4.9.5"
+  }
+}
   "keywords": [
     "erp",
     "cooperative",
